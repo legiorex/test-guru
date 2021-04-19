@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Проект Test-Guru
 
-Things you may want to cover:
+* Администраторы, авторы тестов.
 
-* Ruby version
+* Пользователи, тестируемые
 
-* System dependencies
+* Тесты
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Итоговый бланк, сертификат
