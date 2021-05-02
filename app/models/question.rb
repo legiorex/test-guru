@@ -1,4 +1,4 @@
 class Question < ApplicationRecord
-  has_one :answer
+  has_many :answer
   belongs_to :test
 end
