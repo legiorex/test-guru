@@ -7,17 +7,22 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 categories = Category.create([{ title: 'Ruby' }, { title: 'JavaScript' }])
+users = User.create([
+                      { first_name: 'Василий', last_name: 'Петров', email: 'petrov@mail.com' },
+                      { first_name: 'Юрий', last_name: 'Сидоров', email: 'sidorov@mail.com' }
+                    ])
 
 tests = Test.create([
-                      { title: 'types in Ruby', category_id: categories[0].id },
-                      { title: 'types in JavaScript', category_id: categories[1].id },
-                      { title: 'Классы в Ruby', level: 1, category_id: categories[0].id },
-                      { title: 'Блоки', level: 2, category_id: categories[0].id },
-                      { title: 'Массивы в Ruby', level: 0, category_id: categories[0].id },
-                      { title: 'Стрелочные функции', level: 1, category_id: categories[1].id },
-                      { title: 'Функции генераторы', level: 3, category_id: categories[1].id },
-                      { title: 'Асинхронные операции', level: 3, category_id: categories[1].id }
+                      { title: 'types in Ruby', category_id: categories[0].id, author_id: users[0].id },
+                      { title: 'types in JavaScript', category_id: categories[1].id, author_id: users[1].id },
+                      { title: 'Классы в Ruby', level: 1, category_id: categories[0].id, author_id: users[0].id },
+                      { title: 'Блоки', level: 2, category_id: categories[0].id, author_id: users[0].id },
+                      { title: 'Массивы в Ruby', level: 0, category_id: categories[0].id, author_id: users[0].id },
+                      { title: 'Стрелочные функции', level: 1, category_id: categories[1].id, author_id: users[1].id },
+                      { title: 'Функции генераторы', level: 3, category_id: categories[1].id, author_id: users[1].id },
+                      { title: 'Асинхронные операции', level: 3, category_id: categories[1].id, author_id: users[1].id }
                     ])
+
 questions = Question.create([
                               { body: 'Приведите пример типа number и string', test_id: tests[0].id },
                               { body: 'Что такое Хеш в Ruby?', test_id: tests[0].id },
@@ -37,16 +42,13 @@ Answer.create([
                   body: 'Массив (Array) в JavaScript является глобальным объектом, который используется для создания массивов; которые представляют собой высокоуровневые спископодобные объекты.', correct: true, question_id: questions[1].id
                 }
               ])
-users = User.create([
-                      { first_name: 'Василий', last_name: 'Петров', email: 'petrov@mail.com' },
-                      { first_name: 'Юрий', last_name: 'Сидоров', email: 'sidorov@mail.com' }
-                    ])
-TestUser.create([
-                  { test_id: tests[0].id, user_id: users[0].id },
-                  { test_id: tests[1].id, user_id: users[0].id },
-                  { test_id: tests[7].id, user_id: users[0].id },
-                  { test_id: tests[6].id, user_id: users[0].id },
-                  { test_id: tests[3].id, user_id: users[0].id },
-                  { test_id: tests[1].id, user_id: users[1].id }
 
-                ])
+TestsUser.create([
+                   { test_id: tests[0].id, user_id: users[0].id },
+                   { test_id: tests[1].id, user_id: users[0].id },
+                   { test_id: tests[7].id, user_id: users[0].id },
+                   { test_id: tests[6].id, user_id: users[0].id },
+                   { test_id: tests[3].id, user_id: users[0].id },
+                   { test_id: tests[1].id, user_id: users[1].id }
+
+                 ])

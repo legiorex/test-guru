@@ -1,6 +1,9 @@
 class User < ApplicationRecord
+  has_many :tests_users
+  has_many :tests, through: :tests_users
+  has_many :authored_tests, class_name: 'Test', foreign_key: :author_id
+
   def used_tests(level)
-    Test.joins('INNER JOIN test_users ON tests.id = test_users.test_id').where('test_users.user_id' => id, 'tests.level' => level)
-    # id
+    Test.joins(:tests_users).where(level: level)
   end
 end
