@@ -4,11 +4,11 @@ class Answer < ApplicationRecord
 
   validates :body, presence: true
 
-  validate :max_answers
+  validate :max_answers, on: :create
 
   private
 
   def max_answers
-    errors.add(:base) if Answer.where('question_id' => question_id).length >= 4
+    errors.add(:base, 'there can be no more than 4 questions') if question.answers.size >= 4
   end
 end

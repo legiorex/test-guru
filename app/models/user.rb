@@ -5,5 +5,7 @@ class User < ApplicationRecord
 
   validates :email, presence: true
 
-  scope :used_tests, ->(level) { Test.joins(:tests_users).where(level: level) }
+  def used_tests(level)
+    tests.where(level: level)
+  end
 end
