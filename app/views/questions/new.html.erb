@@ -1,0 +1,11 @@
+<h1>Напишите новый вопрос для теста</h1>
+<%= params[:test_id] %>
+<form action="/tests/<%= params[:test_id] %>/questions" metod='post'>
+<p>
+<label for='question-body' >Содержимое вопроса</label>
+<textarea name="question[body]" id="question-body" ></textarea>
+
+</p>
+
+<input type="submit" value="Создать">
+</form>
