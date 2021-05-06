@@ -1,16 +1,9 @@
 class QuestionsController < ApplicationController
-  # before_action :find_test
+  before_action :find_test, only: %i[index create]
 
-  def create
-    result = ["Class: #{params.class}", "Parameters: #{params.inspect}"]
-    render plain: result.join("\n")
-  end
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  def index
-    @questions = Question.questions_test(params[:test_id])
-
-    render inline: '<% @questions.each  { |item| %> <p> <%=item.body %> </p> <% }  %>'
-  end
+  def index; end
 
   def show
     question = Question.find(params[:id])
@@ -20,14 +13,23 @@ class QuestionsController < ApplicationController
 
   def new; end
 
-  def redirect
-    # render plain: 'test'
-    # render inline: params
-    result = ["Class: #{params.class}", "Parameters: #{params.inspect}"]
-    render plain: result.join("\n")
+  def create
+    question = Question.create({ body: params[:body], test_id: @test.id })
+    render plain: question.inspect
   end
 
-  # def find_test
-  #   @test = Test.find(params[:test_id])
-  # end
+  def destroy
+    Question.delete(params[:id])
+    redirect_to "/tests/#{params[:test_id]}/questions"
+  end
+
+  private
+
+  def find_test
+    @test = Test.find(params[:test_id])
+  end
+
+  def rescue_with_question_not_found
+    render plain: 'Вопрос не найден!'
+  end
 end

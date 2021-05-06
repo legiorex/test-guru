@@ -1,9 +1,9 @@
 <h1>Напишите новый вопрос для теста</h1>
-<%= params[:test_id] %>
-<form action="/tests/<%= params[:test_id] %>/questions" metod='post'>
+<form action="/tests/<%= params[:test_id] %>/questions" method='post'>
+<input name="authenticity_token" value="<%= form_authenticity_token%>" type="hidden">
 <p>
 <label for='question-body' >Содержимое вопроса</label>
-<textarea name="question[body]" id="question-body" ></textarea>
+<textarea name="body" id="question-body" ></textarea>
 
 </p>
 
