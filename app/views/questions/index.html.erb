@@ -1,11 +1,16 @@
-<ul>
+<div class='wrapper'>
+<ul class='list-questions'>
 
 <% @test.questions.each  do |question| %>
 
-<li> <%=question.body %>
+<li>
+<p>
+<%=question.body %>
+</p>
 <%= button_to "delete", question_path(test_id: params[:test_id], id: question.id),
  :method => :delete %>
  </li>
 
 <% end  %>
 </ul>
+</div>

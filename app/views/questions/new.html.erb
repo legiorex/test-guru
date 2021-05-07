@@ -1,11 +1,15 @@
-<h1>Напишите новый вопрос для теста</h1>
+<div class='wrapper'>
+<h1 class='title-questions'>Напишите новый вопрос для теста</h1>
 <form action="/tests/<%= params[:test_id] %>/questions" method='post'>
 <input name="authenticity_token" value="<%= form_authenticity_token%>" type="hidden">
 <p>
+<div class='field-body'>
 <label for='question-body' >Содержимое вопроса</label>
 <textarea name="body" id="question-body" ></textarea>
+</div>
 
 </p>
 
 <input type="submit" value="Создать">
 </form>
+</div>

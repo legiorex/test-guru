@@ -1,3 +1,34 @@
 // Place all the styles related to the questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.title-questions {
+    color: aqua;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.field-body{
+    display: flex;
+    align-items: center;
+    & > :first-child{
+        margin-right: 20px;
+    }
+}
+.list-questions{
+    list-style-type: none;
+    li {
+        justify-content: space-between;
+        width: 400px;
+        display: flex;
+        align-items: center;
+        height: 30px;
+
+        & > :first-child{
+           &::first-letter {
+                text-transform: uppercase;
+            }
+        }
+    }
+}

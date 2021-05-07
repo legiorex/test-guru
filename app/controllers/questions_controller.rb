@@ -14,8 +14,13 @@ class QuestionsController < ApplicationController
   def new; end
 
   def create
-    question = Question.create({ body: params[:body], test_id: @test.id })
-    render plain: question.inspect
+    question = @test.questions.new({ body: params[:body] })
+    if question.save
+      render plain: 'good'
+    else
+      redirect_to "/tests/#{params[:test_id]}/questions/new"
+
+    end
   end
 
   def destroy
