@@ -1,0 +1,6 @@
+<div class='wrapper'>
+    <ul class='list-questions'>
+        <%= button_to "Создать вопрос", new_test_question_path(test_id: @test.id), method: :get  %>
+        <%= render @test.questions %>
+    </ul>
+</div>

@@ -8,4 +8,8 @@ class User < ApplicationRecord
   def used_tests(level)
     tests.where(level: level)
   end
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end
