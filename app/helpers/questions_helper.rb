@@ -1,9 +1,9 @@
 module QuestionsHelper
-  def title_question(test, question = nil)
-    if question
-      "Измените вопрос для теста #{test.title}"
+  def title_question(question)
+    if question.new_record?
+      "Напишите новый вопрос для теста #{question.test.title}"
     else
-      "Напишите новый вопрос для теста #{test.title}"
+      "Измените вопрос для теста #{question.test.title}"
     end
   end
 end

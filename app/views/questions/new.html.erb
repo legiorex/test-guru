@@ -1,6 +1,6 @@
 <div class='wrapper'>
-    <h1 class='title-questions'><%= title_question(@test) %></h1>
-    <%= render 'form', model: [:test, @question] %><br>
+    <h1 class='title-questions'><%= title_question(@question) %></h1>
+    <%= render 'form' %><br>
 
     <%= link_to "Список вопросов", test_path(@test) %>
 
