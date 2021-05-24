@@ -15,5 +15,5 @@
     <p><%= form.submit 'Next' %></p>
 <% end %>
 
-<%= @test_passage.test.questions.map(&:id).index(@test_passage.current_question.id) +1 %>
+<%= @test_passage.current_index %>
 / <%= @test_passage.test.questions.count%>

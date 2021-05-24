@@ -1,1 +1,14 @@
 <h1>The <%= @test_passage.test.title %> Test was Completed! </h1>
+<div class='wrapper-result'>
+    <% if @test_passage.result_percent >= 85 %>
+
+        <div class='result-success'>
+            Тест пройден! Результат: <%= @test_passage.result_percent %> %
+        </div>
+        <% else%>
+        <div class='result-fail'>
+            Тест не пройден! Результат: <%= @test_passage.result_percent %> %
+        </div>
+    <% end %>
+</div>
+<%= link_to "Список тестов", tests_path %>

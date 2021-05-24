@@ -1,3 +1,12 @@
 // Place all the styles related to the test_passages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.wrapper-result{
+    margin: 50px 0;
+}
+.result-success{
+    color: green;
+}
+.result-fail{
+    color: red;
+}
