@@ -1,0 +1,9 @@
+<li>
+    <p><%=question.body %></p>
+    <div class='actions-wrapper'>
+        <%= button_to "Посмотреть", question_path(question), method: :get %>
+        <%= button_to "Редактировать", edit_question_path(question), method: :get %>
+        <%= button_to "Удалить", question_path(test_id: @test.id, id: question.id),
+        :method => :delete, data: {confirm: 'Вы уверены?'} %>
+    </div>
+</li>

@@ -1,0 +1,18 @@
+<p>
+    <strong>Название теста</strong>
+    <%= @test.title %>
+</p>
+
+<p>
+    <strong>Уровень теста</strong>
+    <%= test_level(@test) %>
+</p>
+
+<p>
+    <strong>Список вопросов</strong>
+    <%= render '/questions/list_questions' %>
+</p>
+
+
+<%= link_to "Редактировать", edit_test_path(@test) %>
+<%= link_to "Список тестов", tests_path %>
