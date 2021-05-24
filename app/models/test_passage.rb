@@ -23,7 +23,11 @@ class TestPassage < ApplicationRecord
   end
 
   def result_percent
-      correct_questions * 100 / test.questions.size
+    correct_questions * 100 / test.questions.size
+  end
+
+  def success?
+    result_percent >= SUCCESS
   end
 
   private
