@@ -12,7 +12,16 @@
 
   <body>
     <div class='content'>
+      <% if logged_in? %>
+        <%= link_to 'Logout', logout_path, method: "delete" %>
+        <%= link_to tests_path do %>
+          <p class='nav user'>Welcome,<b><%= current_user.full_name %></b> Guru</p>
+        <% end %>
+        <p class='nav user'> <%= current_user.email %> </p>
+      <% end %>
+
       <%= yield %>
+
     </div>
     <%= render '/shared/footer' %>
   </body>
