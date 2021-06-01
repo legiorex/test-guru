@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin | TestGuru</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class='content'>
+
+      <% if user_signed_in? %>
+        <%= link_to 'Logout', destroy_user_session_path, method: "delete" %>
+        <%= link_to tests_path do %>
+          <p class='nav user'>Welcome,<b><%= current_user.full_name %></b> Guru</p>
+        <% end %>
+        <p class='nav user'> <%= current_user.email %> </p>
+      <% end %>
+
+      <%= render '/admin/nav' %>
+      <%= render '/shared/flash' %>
+
+
+      <%= yield %>
+
+    </div>
+    <%= render '/shared/footer' %>
+  </body>
+</html>

@@ -95,7 +95,7 @@ GEM
       activesupport (>= 5.0.0)
     launchy (2.5.0)
       addressable (~> 2.7)
-    letter_opener (1.7.0)
+    letter_opener (1.2.0)
       launchy (~> 2.2)
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -222,7 +222,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   devise (~> 4.0)
   jbuilder (~> 2.7)
-  letter_opener
+  letter_opener (~> 1.2.0)
   listen (~> 3.3)
   pg (~> 1.2.3)
   puma (~> 5.0)
