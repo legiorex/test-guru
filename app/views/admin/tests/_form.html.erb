@@ -17,10 +17,6 @@
         <%= form.collection_select :category_id, Category.all, :id, :title, promt: true%>
     </p><br>
 
-    <p>
-        <%= form.label :author_id, 'Выберите автора теста'%><br>
-        <%= form.collection_select :author_id, User.all, :id, :full_name, promt: true%>
-    </p><br>
 
     <%= form.submit 'Сохранить'%>
 <%end%>
