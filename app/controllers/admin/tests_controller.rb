@@ -20,10 +20,8 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def create
-    @test = Test.create(test_params)
-    @test.author_id = current_user.id
+    @test = current_user.authored_tests.new(test_params)
 
-    @test.save
     if @test.save
 
       redirect_to admin_test_path(@test)
@@ -33,20 +31,12 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def update
-    @test.update(test_params)
-    @test.author_id = current_user.id
-
-    if @test.save
+    if @test.update(test_params)
 
       redirect_to admin_test_path(@test)
     else
       render :new
     end
-  end
-
-  def start
-    current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test)
   end
 
   private

@@ -4,7 +4,7 @@ class TestsController < ApplicationController
 
   def index
     @tests = Test.all
-    redirect_to admin_tests_path if current_user.is_a?(Admin)
+    # redirect_to admin_tests_path if current_user.is_a?(Admin)
   end
 
   def start
