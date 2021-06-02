@@ -17,12 +17,6 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    if resource.instance_of?(Admin)
-      # redirect_to admin_test_path
-      # root_path
-      admin_tests_path
-    elsif resource.instance_of?(User)
-      root_path
-    end
+    resource.admin? ? admin_tests_path : root_path
   end
 end
