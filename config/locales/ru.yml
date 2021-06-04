@@ -1,0 +1,57 @@
+ru:
+  hello: "Привет"
+  registrations:
+    new:
+      create: "Создать аккаунт"
+  tests:
+    index:
+      header: "Доступные тесты"
+      title: "Название теста"
+      level: "Уровень сложности теста"
+      actions: "Управление"
+      count: "Количество вопросов"
+  admin:
+    tests:
+      create:
+        success: "Тест успешно создан."
+      index:
+        header: "Доступные тесты"
+        new_test: "Создать тест"
+        title_test: "Название теста"
+        test_level: "Уровень сложности теста"
+        actions: "Управление"
+        count: "Количество вопросов"
+      test:
+        show: "Смотреть"
+        edit: "Редактировать"
+        delete: "Удалить"
+    nav:
+      title: "TestGuru Панель настроек"
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершён!"
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+  test_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru!"
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+      user:
+        create: "Войти"
+    label:
+      test:
+        title: "Введите название теста"
+        level: "Введите уровень сложности теста"
+        category_id: "Выберите категорию теста"
+    select:
+      test:
+        prompt: "Выберите категорию"
