@@ -2,14 +2,14 @@
     <td><%= test.title%></td>
     <td><%= test_level(test)%></td>
     <td>
-        <%= link_to "Смотреть", admin_test_path(test) %>
+        <%= link_to t('.show'), admin_test_path(test) %>
     </td>
     <td>
-        <%= link_to "Редактировать", edit_admin_test_path(test) %>
+        <%= link_to t('.edit'), edit_admin_test_path(test) %>
     </td>
 
     <td>
-        <%= link_to "Удалить",
+        <%= link_to t('.delete'),
         admin_test_path(test),
         method: :delete,
         data: {confirm: 'Вы уверены?'}

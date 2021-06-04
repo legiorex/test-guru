@@ -1,13 +1,13 @@
-<h1>The <%= @test_passage.test.title %> Test was Completed! </h1>
+<h1> <%= t('.header', title: @test_passage.test.title) %> </h1>
 <div class='wrapper-result'>
     <% if @test_passage.success? %>
 
         <div class='result-success'>
-            Тест пройден! Результат: <%= @test_passage.result_percent %> %
+            Тест пройден! Результат: <%= @test_passage.result_percent %>
         </div>
         <% else%>
         <div class='result-fail'>
-            Тест не пройден! Результат: <%= @test_passage.result_percent %> %
+            Тест не пройден! Результат: <%= @test_passage.result_percent %>
         </div>
     <% end %>
 </div>
