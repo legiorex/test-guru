@@ -22,7 +22,10 @@ class TestPassagesController < ApplicationController
     flash_options = if result.nil?
                       { alert: t('.failure') }
                     else
+                      current_user.gists.create(gist_url: result[:html_url], question: @test_passage.current_question)
+
                       { notice: view_context.link_to(t('.success'), result[:html_url]) }
+
                     end
 
     redirect_to @test_passage, flash_options
