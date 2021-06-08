@@ -30,6 +30,9 @@ ru:
   test_passages:
     result:
       header: "Тест %{title} успешно завершён!"
+    gist:
+      success: "Gist успешно сохранён!"
+      failure: "Во время сохранения gist произошла ошибка!"
   shared:
     errors:
       header:
