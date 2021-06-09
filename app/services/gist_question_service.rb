@@ -10,7 +10,7 @@ class GistQuestionService
   end
 
   def success?
-    @client.last_response.status == 200
+    @client.last_response.status == '201'
   end
 
   private
