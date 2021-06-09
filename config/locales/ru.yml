@@ -25,11 +25,22 @@ ru:
         show: "Смотреть"
         edit: "Редактировать"
         delete: "Удалить"
+    gists:
+      index:
+        header: "Сохранённые вопросы в Gist"
+        question: "Вопрос"
+        user: "Автор"
+        link: "Ссылка"
+      gist:
+        follow: "Перейти"
     nav:
       title: "TestGuru Панель настроек"
   test_passages:
     result:
       header: "Тест %{title} успешно завершён!"
+    gist:
+      success: "Gist успешно сохранён!"
+      failure: "Во время сохранения gist произошла ошибка!"
   shared:
     errors:
       header:

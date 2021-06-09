@@ -25,11 +25,20 @@ en:
         show: "Show"
         edit: "Edit"
         delete: "Delete"
+    gists:
+      index:
+        header: "Saved questions in Gist"
+        question: "Question"
+        user: "Autor"
+        link: "Link"
     nav:
       title: "TestGuru Admin Panel"
   test_passages:
     result:
       header: "The %{title} test was completed!"
+    gist:
+      success: "Gist was successfully created"
+      failure: "An error occurred while saving gist!"
   shared:
     errors:
       header:
