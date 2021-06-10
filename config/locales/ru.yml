@@ -25,6 +25,8 @@ ru:
         show: "Смотреть"
         edit: "Редактировать"
         delete: "Удалить"
+      form_inline:
+        submit: "OK"
     gists:
       index:
         header: "Сохранённые вопросы в Gist"
