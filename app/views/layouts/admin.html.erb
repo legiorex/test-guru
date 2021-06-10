@@ -13,7 +13,9 @@
 
   <body>
 
-    <%= render 'shared/nav' %>
+    <% if user_signed_in? %>
+      <%= render 'shared/nav' %>
+    <% end %>
 
       <div class="container">
         <%= yield %>
