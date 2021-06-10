@@ -33,9 +33,4 @@ const onEdit = (testId) => {
         formInline.classList.add('hide')
         link.textContent = 'Edit'
     }
-
-
-
-
-
 }
