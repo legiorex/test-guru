@@ -1,36 +1,45 @@
-<h2><%= t('.header') %></h2>
+<div class='row justify-content-center mt-3'>
+    <div class='col col-md-4'>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+      <h2><%= t('.header') %></h2>
+      <div class='card border-primary'>
+        <div class='card-body'>
 
-   <p>
-        <%= f.label :first_name, t('.first_name') %>
-        <%= f.text_field :first_name %><br>
-    </p>
-    <p>
-        <%= f.label :last_name, t('.last_name') %>
-        <%= f.text_field :last_name %><br>
-    </p>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email, t('.email') %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+            <p>
+                  <%= f.label :first_name, t('.first_name') %>
+                  <%= f.text_field :first_name, class: 'form-control' %><br>
+              </p>
+              <p>
+                  <%= f.label :last_name, t('.last_name') %>
+                  <%= f.text_field :last_name, class: 'form-control' %><br>
+              </p>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+            <div class="field">
+              <%= f.label :email, t('.email') %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+            </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+            <div class="field">
+              <%= f.label :password %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "new-password", class: 'form-control password' %>
+            </div>
 
-  <div class="actions">
-    <%= f.submit t("registrations.new.create")%>
-  </div>
-<% end %>
+            <div class="field">
+              <%= f.label :password_confirmation %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control confirm_password' %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit t("registrations.new.create"), class: 'btn btn-primary'%>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+</div>

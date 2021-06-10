@@ -4,9 +4,13 @@
     <%= link_to t('.new_test'), new_admin_test_path %>
 </p>
 
-<table>
+<table class='table'>
     <tr>
-        <th><%= t('.title_test') %></th>
+        <th class='sort-by-title pointer'>
+            <%= t('.title_test') %>
+            <i class="bi bi-arrow-up-short text-success hide"></i>
+            <i class="bi bi-arrow-down-short text-success hide"></i>
+        </th>
         <th><%= t('.test_level') %></th>
         <th colspan="3"><%= t('.actions') %></th>
         <th><%= t('.count') %></th>

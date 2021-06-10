@@ -11,6 +11,9 @@ import 'bootstrap/dist/js/bootstrap'
 import "bootstrap/dist/css/bootstrap";
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
+require("utillites/sorting")
+require("utillites/check_psw")
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
