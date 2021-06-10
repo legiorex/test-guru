@@ -13,6 +13,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 
 require("utillites/sorting")
 require("utillites/check_psw")
+require("utillites/form_inline")
+require("utillites/progress_bar")
 
 Rails.start()
 Turbolinks.start()

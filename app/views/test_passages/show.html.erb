@@ -1,4 +1,5 @@
 <h1>Passing the <%= @test_passage.test.title %> Test </h1>
+<%= render 'progress_bar', test_passage: @test_passage  %>
 <p>
     <b><%= @test_passage.current_question.body %></b>
 </p>
@@ -11,7 +12,7 @@
         </p>
 
     <% end %>
-    <p><%= form.submit 'Next' %></p>
+    <p><%= form.submit 'Next', class: 'btn btn-primary' %></p>
 <% end %>
 
 <p><%= link_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post %></p>

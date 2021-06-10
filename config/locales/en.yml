@@ -25,6 +25,8 @@ en:
         show: "Show"
         edit: "Edit"
         delete: "Delete"
+      form_inline:
+        submit: "OK"
     gists:
       index:
         header: "Saved questions in Gist"

@@ -2,7 +2,7 @@
     <td><%= test.title%></td>
     <td><%= test_level(test)%></td>
        <td>
-        <%= button_to 'Старт', start_test_path(test) %>
+        <%= button_to 'Старт', start_test_path(test), class: 'btn btn-success' %>
     </td>
 <td><%= test.questions.size%></td>
 </tr>
