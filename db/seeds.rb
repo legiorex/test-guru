@@ -57,9 +57,3 @@ answers = [
 ]
 
 answers.each { |item| Answer.find_or_create_by(item) }
-
-tests_users = [
-  { test_id: get_tests[0].id, user_id: get_users[0].id },
-  { test_id: get_tests[1].id, user_id: get_users[0].id }
-]
-tests_users.map { |item| TestsUser.find_or_create_by(item) }
