@@ -1,0 +1,13 @@
+<tr>
+    <td class='align-middle'>
+        <%= content_tag :span, badge.name, class: 'test-title' %>
+    </td>
+    <td class='align-middle'>
+        <%= badge.file_name %>
+    </td>
+
+    <td class='align-middle'>
+        <%= link_to t('.show'), admin_badge_path(badge) %>
+    </td>
+
+</tr>

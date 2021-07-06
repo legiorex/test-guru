@@ -26,5 +26,6 @@ Rails.application.routes.draw do
       patch :update_inline, on: :member
     end
     resources :gists
+    resources :badges
   end
 end

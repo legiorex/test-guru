@@ -27,8 +27,10 @@ ActiveRecord::Schema.define(version: 2021_07_06_063819) do
   create_table "badges", force: :cascade do |t|
     t.string "name", limit: 50, null: false
     t.string "file_name", limit: 50, null: false
+    t.bigint "author_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_id"], name: "index_badges_on_author_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -115,6 +117,7 @@ ActiveRecord::Schema.define(version: 2021_07_06_063819) do
   end
 
   add_foreign_key "answers", "questions"
+  add_foreign_key "badges", "users", column: "author_id"
   add_foreign_key "gists", "questions"
   add_foreign_key "gists", "users"
   add_foreign_key "questions", "tests"

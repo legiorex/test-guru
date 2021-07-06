@@ -33,6 +33,16 @@ en:
         question: "Question"
         user: "Autor"
         link: "Link"
+    badges:
+      index:
+        header: "Actions badges"
+        new_badges: "Create"
+        name_badges: "Name badges"
+        icon_badges: "Icon badges"
+      new:
+        header: "Create new badge"
+        list_badges: "List badges"
+        success: "Badge create success"
     nav:
       title: "TestGuru Admin Panel"
   test_passages:
