@@ -10,25 +10,40 @@ categories = [{ title: 'Ruby' }, { title: 'JavaScript' }]
 get_categories = categories.map { |item| Category.find_or_create_by(item) }
 
 users = [
-  { first_name: 'Василий', last_name: 'Петров', email: 'petrov@mail.com' },
-  { first_name: 'Юрий', last_name: 'Сидоров', email: 'sidorov@mail.com' },
-  { first_name: 'Иван', last_name: 'Умнейший', email: 'smart@mail.com' }
+  { first_name: 'Василий', last_name: 'Петров', email: 'petrov@mail.com', password: '123456',
+    password_confirmation: '123456' },
+  { first_name: 'Юрий', last_name: 'Сидоров', email: 'sidorov@mail.com', password: '123456',
+    password_confirmation: '123456' },
+  { first_name: 'Иван', last_name: 'Умнейший', email: 'smart@mail.com', password: '123456',
+    password_confirmation: '123456' }
 ]
-get_users = users.map { |item| User.find_or_create_by(item) }
+
+puts users
+
+get_users = users.map do |item|
+  user = User.new(item)
+  user.skip_confirmation!
+  user.save!
+  user
+end
+
+puts "users #{get_users}"
 
 tests = [
   { title: 'types in Ruby', category_id: get_categories[0].id, author_id: get_users[0].id },
   { title: 'types in JavaScript', category_id: get_categories[1].id, author_id: get_users[1].id }
 ]
-get_tests = tests.map { |item| Test.find_or_create_by(item) }
+puts tests
 
+get_tests = tests.map { |item| Test.find_or_create_by(item) }
+puts get_tests
 questions = [
   { body: 'Приведите пример типа number и string', test_id: get_tests[0].id },
   { body: 'Что такое Хеш в Ruby?', test_id: get_tests[0].id },
   { body: 'Что такое undefined в JavaScript?', test_id: get_tests[1].id },
   { body: 'Что такое Массив в JavaScript?', test_id: get_tests[1].id }
 ]
-
+puts questions
 get_questions = questions.map { |item| Question.find_or_create_by(item) }
 
 puts get_questions[0].id
@@ -57,9 +72,3 @@ answers = [
 ]
 
 answers.each { |item| Answer.find_or_create_by(item) }
-
-tests_users = [
-  { test_id: get_tests[0].id, user_id: get_users[0].id },
-  { test_id: get_tests[1].id, user_id: get_users[0].id }
-]
-tests_users.map { |item| TestsUser.find_or_create_by(item) }
