@@ -39,6 +39,7 @@ en:
         new_badges: "Create"
         name_badges: "Name badges"
         icon_badges: "Icon badges"
+        rule_badges: "Rules"
       new:
         header: "Create new badge"
         list_badges: "List badges"

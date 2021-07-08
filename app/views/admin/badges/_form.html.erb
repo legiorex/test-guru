@@ -12,5 +12,10 @@
         <%= form.text_field :file_name%>
     </p><br>
 
+     <p>
+        <%= form.label :rule %><br>
+        <%= form.select :rule, options_for_select(rules.map {|k,v| [v,k]}), prompt: true%>
+    </p><br>
+
     <%= form.submit%>
 <%end%>

@@ -41,6 +41,7 @@ ru:
         new_badges: "Создать"
         name_badges: "Название награды"
         icon_badges: "Иконка награды"
+        rule_badges: "Правила"
       new:
         header: "Создать новую награду"
         list_badges: "Список наград"

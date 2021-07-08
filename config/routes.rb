@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :user_badges, only: [:index]
+
   resources :test_passages, only: %i[update show] do
     member do
       get :result
