@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2021_07_08_170302) do
     t.string "name", limit: 50, null: false
     t.string "file_name", limit: 50, null: false
     t.string "rule", null: false
+    t.string "type_badge", null: false
     t.bigint "author_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

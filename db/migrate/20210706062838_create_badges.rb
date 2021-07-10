@@ -4,6 +4,7 @@ class CreateBadges < ActiveRecord::Migration[6.1]
       t.string :name, limit: 50, null: false
       t.string :file_name, limit: 50, null: false
       t.string :rule, null: false
+      t.string :type_badge, null: false
       t.references :author, foreign_key: { to_table: :users }
 
       t.timestamps
