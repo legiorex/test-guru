@@ -14,19 +14,17 @@ class BadgeAwardService
   private
 
   def start_ward?
-    TestPassage.where(test_id: @current_test_passage.test_id).size == 1
+    TestPassage.where(test_id: @current_test_passage.test_id, user_id: current_user.id).size == 1
   end
 
   def category_ward?(rule)
-    category_id = Category.find_by(title: rule)[0].id
+    selected_tests = Test.by_category(rule)
 
-    selected_tests = Test.where(category_id: category_id)
-
-    success_tests = TestPassage.where(success: true)
+    success_tests = TestPassage.where(success: true, user_id: current_user.id)
 
     result = selected_tests.map do |test|
       success_tests.select { |item| item.test_id == test.id }
     end
-    selected_tests.seze == result.size
+    selected_tests.size == result.size
   end
 end
