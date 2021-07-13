@@ -17,8 +17,8 @@ class BadgeAwardService
     TestPassage.where(test_id: @current_test_passage.test_id, user_id: current_user.id).size == 1
   end
 
-  def category_ward?(rule)
-    selected_tests = Test.by_category(rule)
+  def category_ward?(params)
+    selected_tests = Test.by_category(params)
 
     success_tests = TestPassage.where(success: true, user_id: current_user.id)
 
