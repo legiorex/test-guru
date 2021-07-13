@@ -17,14 +17,11 @@ class BadgeAwardService
     TestPassage.where(test_id: @current_test_passage.test_id, user_id: current_user.id).size == 1
   end
 
-  def category_ward?(params)
-    selected_tests = Test.by_category(params)
+  def category_ward?(category)
+    selected_tests = Test.by_category(category)
 
-    success_tests = TestPassage.where(success: true, user_id: current_user.id)
+    user_tests = @user.tests.tests_by_category(category).uniq.count
 
-    result = selected_tests.map do |test|
-      success_tests.select { |item| item.test_id == test.id }
-    end
-    selected_tests.size == result.size
+    selected_tests.count == user_tests.count
   end
 end
