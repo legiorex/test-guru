@@ -15,6 +15,7 @@ class BadgeAwardService
 
   def start_ward?
     TestPassage.where(test_id: @current_test_passage.test_id, user_id: current_user.id).size == 1
+    puts 'ttt'
   end
 
   def category_ward?(category)
