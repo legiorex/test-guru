@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :authored_tests, class_name: 'Test', foreign_key: :author_id
   has_many :gists
+  has_many :authored_badges, class_name: 'Badge', foreign_key: :author_id
+  has_many :user_badges
 
   validates :email, uniqueness: true,
                     format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: 'invalid format email', on: :create }

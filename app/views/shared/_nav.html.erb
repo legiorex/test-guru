@@ -9,6 +9,14 @@
             <%= link_to  admin_gists_path do %>
                 <i class="bi bi-github"></i>
             <% end %>
+            <%= link_to  admin_badges_path do %>
+                <i class="bi bi-award"></i>
+            <% end %>
+        <% end %>
+        <% unless current_user.admin? %>
+           <%= link_to  admin_badges_path do %>
+                <i class="bi bi-award"></i>
+            <% end %>
         <% end %>
 
     </span>

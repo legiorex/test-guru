@@ -4,6 +4,7 @@
 
         <div class='result-success'>
             Тест пройден! Результат: <%= @test_passage.result_percent %>
+            <%= @test_passage.test.user_badges %>
         </div>
         <% else%>
         <div class='result-fail'>
